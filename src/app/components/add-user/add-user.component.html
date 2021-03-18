@@ -1,0 +1,116 @@
+
+<div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="firstName">firstName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          required
+          [(ngModel)]="User.firstName"
+          name="firstName"
+          #firstName="ngModel"
+        />
+        <span class="text-danger"
+                                *ngIf="(firstName.touched) && firstName.errors?.required">
+                                firstName Name is required
+                            </span>
+      </div>
+  
+      <div class="form-group">
+        <label for="lastname">lastname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastname"
+          required
+          [(ngModel)]="User.lastName"
+          name="lastname"
+          #lastname="ngModel"
+        />
+        <span class="text-danger"
+                                *ngIf="(lastname.touched) && lastname.errors?.required">
+                               Last Name is required
+                            </span>
+      </div>
+
+      <div class="form-group">
+        <label for="address">address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          required
+          [(ngModel)]="User.address"
+          name="address"
+          #address="ngModel"
+        />
+        <span class="text-danger"
+                                *ngIf="(address.touched) && address.errors?.required">
+                               Address is required
+                            </span>
+      </div>
+
+      <div class="form-group">
+        <label for="pincode">pincode</label>
+        <input
+          type="text"
+          class="form-control"
+          id="pincode"
+          required
+          [(ngModel)]="User.pincode"
+          name="pincode"
+          #pincode="ngModel"
+
+        />
+        <span class="text-danger"
+                                *ngIf="(pincode.touched) && pincode.errors?.required">
+                                pincode is required
+                            </span>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">dob</label>
+        <input
+          type="text"
+          class="form-control"
+          id="dob"
+          required
+          [(ngModel)]="User.dob"
+          name="dob"
+          #dob="ngModel"
+        />
+        <span class="text-danger"
+                                *ngIf="(dob.touched) && dob.errors?.required">
+                                date of birth is required
+                            </span>
+      </div>
+
+      <div class="form-group">
+        <label for="joindate">joindate</label>
+        <input
+          type="text"
+          class="form-control"
+          id="joindate"
+          required
+          [(ngModel)]="User.joindate"
+          name="joindate"
+          #joindate="ngModel"
+        />
+        <span class="text-danger"
+        *ngIf="(joindate.touched) && joindate.errors?.required">
+        Join date is required
+    </span>
+      </div>
+  
+      <button (click)="saveUser()" class="btn btn-success">Submit</button>
+    </div>
+  
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newUser()">Add</button>
+    </div>
+
+    
+  </div>
